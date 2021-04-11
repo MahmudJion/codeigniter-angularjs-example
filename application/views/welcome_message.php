@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-	<title>Codeigniter 3</title>
+	<title>Codeigniter 3 & AngularJS</title>
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
@@ -31,8 +31,8 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="#/">Home</a></li>
-					<li><a href="#/items">Item</a></li>
+					<li><a href="/">Home</a></li>
+					<li><a href="/items">Item</a></li>
 				</ul>
 			</div>
 		</div>

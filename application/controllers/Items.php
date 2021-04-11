@@ -8,7 +8,7 @@ class Items extends CI_Controller {
 			$this->db->like('title', $this->input->get("search"));
 			$this->db->or_like('description', $this->input->get("search"));
 		}
-		$this->db->limit(5, ($this->input->get("page",1) - 1) * 5);
+		// $this->db->limit(5, ($this->input->get("page",1) - 1) * 5);
 		$query = $this->db->get("items");
 		$data['data'] = $query->result();
 		$data['total'] = $this->db->count_all("items");
