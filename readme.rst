@@ -11,6 +11,14 @@ you creatively focus on your project by minimizing the amount of code needed
 for a given task.
 
 *******************
+Starting Local Server
+*******************
+
+```
+php -S localhost:8000 index.php
+```
+
+*******************
 Release Information
 *******************
 
