@@ -48,3 +48,25 @@ app.factory('dataFactory', function($http) {
     };
     return myService;
   });
+
+app.factory('ItemService', ['$http', function($http) {
+    var baseUrl = 'http://localhost/codeigniter-angularjs-example/api/items';
+
+    return {
+        getAllItems: function() {
+            return $http.get(baseUrl);
+        },
+        getItemById: function(id) {
+            return $http.get(baseUrl + '/' + id);
+        },
+        createItem: function(data) {
+            return $http.post(baseUrl, data);
+        },
+        updateItem: function(id, data) {
+            return $http.put(baseUrl + '/' + id, data);
+        },
+        deleteItem: function(id) {
+            return $http.delete(baseUrl + '/' + id);
+        }
+    };
+}]);
