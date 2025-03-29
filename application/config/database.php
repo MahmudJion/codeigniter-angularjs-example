@@ -94,3 +94,8 @@ $db['default'] = array(
     'failover' => array(),
     'save_queries' => TRUE
 );
+
+putenv('DB_HOST=localhost');
+putenv('DB_USERNAME=root');
+putenv('DB_PASSWORD=');
+putenv('DB_DATABASE=ci_database');
