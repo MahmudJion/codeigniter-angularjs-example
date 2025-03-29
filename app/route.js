@@ -1,13 +1,20 @@
-var app =  angular.module('main-App',['ngRoute','angularUtils.directives.dirPagination']);
-app.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider.
-            when('/', {
-                templateUrl: 'templates/home.html',
-                controller: 'AdminController'
-            }).
-            when('/items', {
-                templateUrl: 'templates/items.html',
-                controller: 'ItemController'
-            });
+var app = angular.module('myApp', ['ngRoute']);
+
+app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider
+        .when('/home', {
+            templateUrl: 'views/home.html',
+            controller: 'HomeController'
+        })
+        .when('/items', {
+            templateUrl: 'views/items.html',
+            controller: 'ItemsController'
+        })
+        .when('/items/:id', {
+            templateUrl: 'views/item-detail.html',
+            controller: 'ItemDetailController'
+        })
+        .otherwise({
+            redirectTo: '/home'
+        });
 }]);
