@@ -69,3 +69,35 @@ app.controller('AdminController', function($scope,$http){
       }
     }
   });
+
+app.controller('ItemsController', ['$scope', 'ItemService', function($scope, ItemService) {
+    $scope.items = [];
+    $scope.error = '';
+
+    // Fetch all items
+    $scope.loadItems = function() {
+        ItemService.getAllItems()
+            .then(function(response) {
+                $scope.items = response.data;
+            })
+            .catch(function(error) {
+                $scope.error = 'Error fetching items: ' + error.message;
+            });
+    };
+
+    // Delete an item
+    $scope.deleteItem = function(id) {
+        if (confirm('Are you sure you want to delete this item?')) {
+            ItemService.deleteItem(id)
+                .then(function() {
+                    $scope.loadItems(); // Reload items after deletion
+                })
+                .catch(function(error) {
+                    $scope.error = 'Error deleting item: ' + error.message;
+                });
+        }
+    };
+
+    // Initialize
+    $scope.loadItems();
+}]);
